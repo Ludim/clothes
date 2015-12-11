@@ -58,6 +58,8 @@ $infoClothes = $objClothes->getInformationClothes("dress", 10);
         <div id="livesearch"></div>
       </form>
 
+      <br><br><br><br><br>
+
     </div>    
 
      <script>
