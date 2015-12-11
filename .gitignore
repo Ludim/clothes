@@ -4,3 +4,4 @@ claves.php
 #*
 contacts.json
 vendor/
+composer.lock
