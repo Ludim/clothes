@@ -13,6 +13,10 @@ class Clothes
         $this->index = $client->initIndex($indexName);
     }
 
+    public function getIndex() {
+        return $this->index;
+    }
+
     public function getInformationClothes($clothes = "dress", $hitsPerPage = 10)
     {
         $query = $this->index->search($clothes, 
@@ -21,7 +25,7 @@ class Clothes
         if($this->validateNbHits($query)) {
             return $this->arrayInformation($query);
         } else {
-            echo "Please, try with other option";
+            return "Please, try with other option";
         }
     }
 
@@ -41,5 +45,12 @@ class Clothes
                                    "designer" => $query["hits"][$i]["Designer"]);
         }
         return $information;
+    }
+
+    public function arrayToJSON($array)
+    {
+        if(is_array($array)) {
+            return json_encode(array("items" =>$array), JSON_PRETTY_PRINT);
+        }
     }
 }
