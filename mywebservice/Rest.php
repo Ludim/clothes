@@ -1,4 +1,6 @@
 <?php
+// Código de: 
+    // http://programandolo.blogspot.mx/2013/08/ejemplo-php-de-servicio-restful-parte-1.html
 class Rest {
     public $tipo = "application/json";
     public $datosPeticion = array();

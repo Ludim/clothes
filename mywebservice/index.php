@@ -52,7 +52,7 @@
             }
           }
 
-          xmlhttp.open("GET","getItems/"+str,true);
+          xmlhttp.open("GET","getItems/?clothes="+str,true);
           xmlhttp.send();
        }
       </script>

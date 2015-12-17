@@ -1,5 +1,6 @@
 <?php
-
+    // Propiedad de: con algunas modificaciones 
+    // http://programandolo.blogspot.mx/2013/08/ejemplo-php-de-servicio-restful-parte-1.html
     require_once("Rest.php");
     require_once '../Clothes.php'; 
 
@@ -131,66 +132,7 @@
     $api = new Api();
     #echo "API\n\n";
     $api->procesarLLamada();  
-    /*
-    private function existeUsuario($email) {  
-     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {  
-       $query = $this->_conn->prepare("SELECT email from usuario WHERE email = :email");  
-       $query->bindValue(":email", $email);  
-       $query->execute();  
-       if ($query->fetch(PDO::FETCH_ASSOC)) {  
-         return true;  
-       }  
-     }  
-     else  
-       return false;  
-    }  
-       
-    }  
-    $api = new Api();  
-    $api->procesarLLamada();  
 
-/*
-    require_once 'Clothes.php';
-    require_once 'Rest.inc.php'; # taken from http://www.9lessons.info/2012/05/create-restful-services-api-in-php.html
-
-    
-    class API extends REST
-    {
-        public $data     = "";
-        const INDEX_NAME = "WomenClothes";
-        private $index = NULL;
-
-        function __construct()
-        {
-            parent::__construct();
-            $this->setIndex();
-        }
-
-        
-        public function setIndex()
-        {
-            $this->index = new Clothes(self::INDEX_NAME);
-            #$infoClothes = $objClothes->getInformationClothes("skirt", 10);
-            #print_r($infoClothes);
-            #$infoClothes = $objClothes->arrayToJSON($infoClothes);
-            
-        }
-
-        private function getItems(){   
-            // Cross validation if the request method is GET else it will return "Not Acceptable" status
-            if($this->get_request_method() != "POST"){
-                $this->response('',406);
-            }
-            $clothes = $this->_request["clothes"];
-            $infoClothes = $this->index->getInformationClothes($clothes, 10);
-            if($infoClothes != "Please, try with other option") {
-                $this->response($this->json($result), 200);
-            } else {
-                $this->response('', 204); // If no records "No Content" status
-            }
-            
-        }
-*/
 /*
 // process client request (VIA URL)
     header("Content-Type:application/json");
