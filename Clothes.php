@@ -46,11 +46,4 @@ class Clothes
         }
         return $information;
     }
-
-    public function arrayToJSON($array)
-    {
-        if(is_array($array)) {
-            return json_encode(array("items" =>$array), JSON_PRETTY_PRINT);
-        }
-    }
 }
