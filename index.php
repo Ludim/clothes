@@ -2,7 +2,8 @@
 require 'Clothes.php';
 $indexName = "WomenClothes";
 $objClothes = new Clothes($indexName);
-$infoClothes = $objClothes->getInformationClothes("dress", 10);
+$infoClothes = $objClothes->getInformationClothes("skirt", 10);
+$infoClothes = $objClothes->arrayToJSON($infoClothes);
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,30 +23,38 @@ $infoClothes = $objClothes->getInformationClothes("dress", 10);
   <body>
     <div class="container">
       <h1>Escenario 1 <small>La consulta es "dress". </small></h1>
-      <table class="table table-striped">
-        <thead> 
-          <tr> 
-            <th>Name</th> 
-            <th>Price</th> 
-            <th>Designer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($infoClothes as $clothes): ?>
-            <tr>
-              <th>
-                <?php echo $clothes["name"]; ?>  
-              </th>
-              <td>
-                <?php echo $clothes["price"]; ?>
-              </td>
-              <td>
-                <?php echo $clothes["designer"]; ?>
-              </td>
+      <?php //echo $infoClothes; ?>
+      <?php //if ($infoClothes == "Please, try with other option"): ?>
+        <h3>
+          <?php echo $infoClothes; ?>
+        </h3>
+      <?php /*else: ?>
+        <table class="table table-striped">
+          <thead> 
+            <tr> 
+              <th>Name</th> 
+              <th>Price</th> 
+              <th>Designer</th>
             </tr>
-          <?php endforeach ?>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <?php foreach ($infoClothes as $clothes): ?>
+              <tr>
+                <th>
+                  <?php echo $clothes["name"]; ?>  
+                </th>
+                <td>
+                  <?php echo $clothes["price"]; ?>
+                </td>
+                <td>
+                  <?php echo $clothes["designer"]; ?>
+                </td>
+              </tr>
+            <?php endforeach ?>
+          </tbody>
+        </table>
+      <?php// endif */?>
+      <br>
       <h1>Escenario 2 
         <small>Desplegar en una pagina de HTML en formato texto, 
           el nombre ("name") de las 5 prendas de cualquier consulta 
