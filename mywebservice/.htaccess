@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    #Activar RewriteEngine
+    RewriteEngine On
+    RewriteBase /shoptive/mywebservice
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Reescribir la URL solicitada por el usuario
+    #   Entrada:  nombre-prenda
+    #   Salida: Clothes.php?prenda=nombre-prenda
+    RewriteRule ^(.+)/?$ api.php?url=$1 [QSA,NC,L,NC]
+</IfModule>
+
+

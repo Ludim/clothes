@@ -6,3 +6,4 @@ contacts.json
 vendor/
 composer.lock
 *.txt
+functions.php
